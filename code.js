@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         webassign edits
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  try to take over the world!
+// @namespace    https://github.com/jfmherokiller
+// @version      1.5
+// @description  a magic script to remove some of the pretification of webassign to make copy paste easier
 // @author       jfmherokiller
-// @match        http://www.webassign.net/*
+// @match        http://www.webassign.net/web/Student/Assignment-Responses/*
+// @match        https://www.webassign.net/web/Student/Assignment-Responses/*
 // @grant        none
 // ==/UserScript==
 
