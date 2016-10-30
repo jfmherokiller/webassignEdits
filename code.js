@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         webassign edits
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.0
 // @description  try to take over the world!
 // @author       jfmherokiller
 // @match        http://www.webassign.net/*
