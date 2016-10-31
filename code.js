@@ -20,9 +20,9 @@
         var squarecontent = jQuery(this).find(".watexsqrtrootcontent").text();
         jQuery(this).text(parenify(raticand)+"^"+parenify("1/"+squarecontent));
     });
-    if(jQuery(".indent").has(".symimage") !== null) {
-      jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
-    }
+    if(jQuery(".indent").has(".symimage").each(function() {
+      jQuery(this).text(jQuery(this).children("img").attr("alt").split("middot").join("*"));
+    });
     jQuery(".watexline").each(function(index2, item) {
         //add exponent sign to the problem and unwrap it
         jQuery(this).find("sup").each(function() {
