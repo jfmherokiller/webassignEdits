@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         webassign edits
 // @namespace    https://github.com/jfmherokiller
-// @version      1.5
+// @version      1.56
 // @description  a magic script to remove some of the pretification of webassign to make copy paste easier
 // @author       jfmherokiller
 // @match        http://www.webassign.net/web/Student/Assignment-Responses/*
