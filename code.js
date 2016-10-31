@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         webassign edits
 // @namespace    https://github.com/jfmherokiller
-// @version      1.56
+// @version      1.567
 // @description  a magic script to remove some of the pretification of webassign to make copy paste easier
 // @author       jfmherokiller
 // @match        http://www.webassign.net/web/Student/Assignment-Responses/*
@@ -18,7 +18,7 @@
     jQuery(".watexsqrt").each(function() {
         var raticand = jQuery(this).find(".watexsqrtradicand").text()
         var squarecontent = jQuery(this).find(".watexsqrtrootcontent").text()
-        console.log(parenify(raticand) + "^" + parenify("1/" + squarecontent))
+        jQuery(this).text(parenify(raticand)+"^"+parenify("1/"+squarecontent))
     });
     jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
     jQuery(".watexline").each(function(index2, item) {
