@@ -14,8 +14,13 @@
     function parenify(input) {
         return "(" + input + ")";
     }
-    function wolframlinkgen(input,element) {
-    jQuery(`<a href="https://www.wolframalpha.com/input/?i=${encodeURIComponent(input)}><img src="https://www.wolframalpha.com/favicon.ico" /></a>`).appendTo(element);
+
+    function wolframlinkgen(input, element) {
+        var cool = jQuery('<img src="https://www.wolframalpha.com/favicon.ico" /></a>');
+        cool.on("click", function() {
+            window.open(`https://www.wolframalpha.com/input/?i=${encodeURIComponent(input)}`, '_blank');
+        });
+        cool.appendTo(element);
     }
 
     jQuery(".watexsqrt").each(function() {
@@ -59,6 +64,7 @@
         }
         var mystring = "sum " + sumcontent + "," + sumbelow + " to " + sumabove;
         jQuery(this).text(mystring);
+        wolframlinkgen(mystring, jQuery(this));
     });
     jQuery(".watexparenright").remove();
 })();
