@@ -8,29 +8,37 @@
 // @match        https://www.webassign.net/web/Student/Assignment-Responses/*
 // @grant        none
 // ==/UserScript==
-
 (function() {
     'use strict';
+    
+    function parenify(input) {
+        return "(" + input + ")";
+    };
+
+    jQuery(".watexsqrt").each(function() {
+        var raticand = jQuery(this).find(".watexsqrtradicand").text()
+        var squarecontent = jQuery(this).find(".watexsqrtrootcontent").text()
+        console.log(parenify(raticand) + "^" + parenify("1/" + squarecontent))
+    });
     jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
-    jQuery(".watexline").each(function(index2,item) {
+    jQuery(".watexline").each(function(index2, item) {
         //add exponent sign to the problem and unwrap it
-        jQuery( this ).find("sup").each(function() {
-            jQuery( this ).text(function( index,text ) {
+        jQuery(this).find("sup").each(function() {
+            jQuery(this).text(function(index, text) {
                 return "^" + text;
             });
-            jQuery( this ).replaceWith(this.childNodes);
+            jQuery(this).replaceWith(this.childNodes);
         });
-        jQuery(this).find(".watexnumerator,.watexdenominator").each(function() { 
-            jQuery(this).text("("+ jQuery(this).text() +")");
+        jQuery(this).find(".watexnumerator,.watexdenominator").each(function() {
+            jQuery(this).text(parenify(jQuery(this).text()));
         });
         jQuery(this).find(".watexnumerator").each(function() {
-            jQuery(this).replaceWith(jQuery(this).text()+"/");
+            jQuery(this).replaceWith(jQuery(this).text() + "/");
         });
         jQuery(this).find(".watexnumerator,.watexdenominator").each(function() {
             jQuery(this).replaceWith(jQuery(this).text());
         });
-        jQuery(this).find(".watexfraction > tbody > tr").each(function()
-                                                   {
+        jQuery(this).find(".watexfraction > tbody > tr").each(function() {
             var t = jQuery(this);
             var n = t.next();
             t.html(t.html() + n.html());
