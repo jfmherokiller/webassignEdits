@@ -27,7 +27,7 @@
         //add exponent sign to the problem and unwrap it
         jQuery(this).find("sup").each(function() {
             jQuery(this).text(function(index, text) {
-                return "^" + text;
+                return "^" + parenify(text);
             });
             jQuery(this).replaceWith(this.childNodes);
         });
