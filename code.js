@@ -57,4 +57,5 @@
         var mystring = "sum " + sumcontent + "," + sumbelow + " to " + sumabove;
         jQuery(this).text(mystring);
     });
+   jQuery(".watexparenright").remove()
 })();
