@@ -10,7 +10,7 @@
 // ==/UserScript==
 (function() {
     'use strict';
-    
+
     function parenify(input) {
         return "(" + input + ")";
     }
@@ -18,10 +18,10 @@
     jQuery(".watexsqrt").each(function() {
         var raticand = jQuery(this).find(".watexsqrtradicand").text();
         var squarecontent = jQuery(this).find(".watexsqrtrootcontent").text();
-        jQuery(this).text(parenify(raticand)+"^"+parenify("1/"+squarecontent));
+        jQuery(this).text(parenify(raticand) + "^" + parenify("1/" + squarecontent));
     });
     jQuery(".indent").has(".symimage").each(function() {
-      jQuery(this).text(jQuery(this).children("img").attr("alt").split("middot").join("*"));
+        jQuery(this).text(jQuery(this).children("img").attr("alt").split("middot").join("*"));
     });
     jQuery(".watexline").each(function(index2, item) {
         //add exponent sign to the problem and unwrap it
@@ -46,5 +46,15 @@
             t.html(t.html() + n.html());
             n.remove();
         });
+    });
+    jQuery(".watexsumcomplex").each(function() {
+        var sumcontent = jQuery(this).find(".watexsumcontent").text();
+        var sumbelow = jQuery(this).find(".watexsumbelowblock").text();
+        var sumabove = jQuery(this).find(".watexsumaboveblock").text();
+        if (sumabove === "∞") {
+            sumabove = "infinity";
+        }
+        var mystring = "sum " + sumcontent + "," + sumbelow + " to " + sumabove;
+        jQuery(this).text(mystring);
     });
 })();
