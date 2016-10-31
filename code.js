@@ -11,6 +11,7 @@
 
 (function() {
     'use strict';
+    jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
     jQuery(".watexline").each(function(index2,item) {
         //add exponent sign to the problem and unwrap it
         jQuery( this ).find("sup").each(function() {
