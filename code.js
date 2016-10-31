@@ -14,6 +14,9 @@
     function parenify(input) {
         return "(" + input + ")";
     }
+    function wolframlinkgen(input,element) {
+    $(`<a href="https://www.wolframalpha.com/input/?i=${encodeURIComponent(input)}><img src="https://www.wolframalpha.com/favicon.ico" /></a>`).appendTo(element);
+    }
 
     jQuery(".watexsqrt").each(function() {
         var raticand = jQuery(this).find(".watexsqrtradicand").text();
@@ -57,5 +60,5 @@
         var mystring = "sum " + sumcontent + "," + sumbelow + " to " + sumabove;
         jQuery(this).text(mystring);
     });
-   jQuery(".watexparenright").remove()
+    jQuery(".watexparenright").remove();
 })();
