@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         webassign edits
 // @namespace    https://github.com/jfmherokiller
-// @version      1.567
+// @version      1.5678
 // @description  a magic script to remove some of the pretification of webassign to make copy paste easier
 // @author       jfmherokiller
 // @match        http://www.webassign.net/web/Student/Assignment-Responses/*
@@ -20,7 +20,9 @@
         var squarecontent = jQuery(this).find(".watexsqrtrootcontent").text()
         jQuery(this).text(parenify(raticand)+"^"+parenify("1/"+squarecontent))
     });
-    jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
+    if(jQuery(".indent").has(".symimage") != null) {
+      jQuery(".indent").has(".symimage").text(jQuery(".indent").has(".symimage").children("img").attr("alt").split("middot").join("*"));
+    }
     jQuery(".watexline").each(function(index2, item) {
         //add exponent sign to the problem and unwrap it
         jQuery(this).find("sup").each(function() {
