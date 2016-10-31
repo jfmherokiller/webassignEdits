@@ -15,7 +15,7 @@
         return "(" + input + ")";
     }
     function wolframlinkgen(input,element) {
-    $(`<a href="https://www.wolframalpha.com/input/?i=${encodeURIComponent(input)}><img src="https://www.wolframalpha.com/favicon.ico" /></a>`).appendTo(element);
+    jQuery(`<a href="https://www.wolframalpha.com/input/?i=${encodeURIComponent(input)}><img src="https://www.wolframalpha.com/favicon.ico" /></a>`).appendTo(element);
     }
 
     jQuery(".watexsqrt").each(function() {
